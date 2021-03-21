@@ -14,5 +14,5 @@ const getConfig = (key: keyof InstallOptions): unknown => $ELEMENT[key];
 
 export {
   getConfig,
-  setConfig,
+  setConfig
 };

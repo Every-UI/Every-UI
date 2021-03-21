@@ -1,0 +1,9 @@
+.ev-container {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+
+  &.is-vertical {
+    flex-direction: column;
+  }
+}

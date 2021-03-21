@@ -1,8 +1,18 @@
 import type { App } from 'vue';
-import EVButton from '../button/src/button.vue';
+import EvAside from '@every-ui/aside/src/aside.vue';
+import EvButton from '@every-ui/button/src/button.vue';
+import EvContainer from '@every-ui/container/src/container.vue';
+import EvFooter from '@every-ui/footer/src/footer.vue';
+import EvHeader from '@every-ui/header/src/header.vue';
+import EvMain from '@every-ui/main/src/main.vue';
 
 const components = [
-  EVButton
+  EvAside,
+  EvButton,
+  EvContainer,
+  EvFooter,
+  EvHeader,
+  EvMain
 ];
 
 const install = (app: App): void => {
@@ -12,7 +22,12 @@ const install = (app: App): void => {
 };
 
 export {
-  EVButton,
+  EvAside,
+  EvButton,
+  EvContainer,
+  EvFooter,
+  EvHeader,
+  EvMain,
   install
 };
 

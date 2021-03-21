@@ -18,7 +18,7 @@ module.exports = {
       },
       extensions: ['.ts', '.tsx', '.js', '.json']
     },
-    entry: process.env.VUE_APP_TYPE === 'WEB' ? resolve('website/src/main.ts') : resolve('packages/every-ui/index.ts'),
+    entry: process.env.VUE_APP_TYPE === 'WEB' ? resolve('website/src/main.ts') : resolve('packages/every-ui/index.ts')
   },
   chainWebpack(config) {
     config.optimization.delete('splitChunks');

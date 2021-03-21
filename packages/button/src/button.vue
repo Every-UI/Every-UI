@@ -2,7 +2,9 @@
   <button
     @click="handleClick"
   >
-    <span v-if="$slots.default"><slot></slot></span>
+    <span v-if="$slots.default">
+      <slot></slot>
+    </span>
   </button>
 </template>
 
@@ -19,6 +21,6 @@ export default defineComponent({
     return {
       handleClick
     };
-  },
+  }
 });
 </script>

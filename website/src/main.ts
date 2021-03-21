@@ -1,8 +1,15 @@
 import { createApp } from 'vue';
 import EveryUI from 'every-ui/lib/every-ui.umd';
-import App from './App.vue';
-import router from './router';
-import store from './store';
+import App from '@/App.vue';
+import router from '@/router';
+import store from '@/store';
 
-createApp(App).use(EveryUI).use(store).use(router)
+import '@/style/index.scss';
+import '@every-ui/style/src/index.scss';
+// import 'every-ui/lib/style/index.css';
+
+createApp(App)
+  .use(store)
+  .use(router)
+  .use(EveryUI)
   .mount('#app');

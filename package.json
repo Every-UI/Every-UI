@@ -1,6 +1,6 @@
 {
   "name": "every-ui",
-  "version": "0.0.1-test",
+  "version": "0.0.1-test-2",
   "private": false,
   "scripts": {
     "website-dev:run": "vue-cli-service serve --mode development-web",
@@ -8,16 +8,16 @@
     "build": "vue-cli-service build",
     "build:lib": "vue-cli-service build --mode production-package --target lib --name every-ui packages/every-ui/index.ts",
     "build:type": "node build/gen-type.js",
+    "build:style": "rimraf packages/style/lib && gulp build --gulpfile packages/style/gulpfile.js && cp-cli packages/style/lib lib/style && rimraf packages/style/lib",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "core-js": "^3.6.5",
     "vue": "^3.0.7",
-    "vue-class-component": "^8.0.0-0",
     "vue-router": "^4.0.0-0",
     "vuex": "^4.0.0-0",
-    "every-ui": "0.0.1-test"
+    "every-ui": "0.0.1-test-2"
   },
   "devDependencies": {
     "@types/jest": "^24.0.19",
@@ -34,16 +34,17 @@
     "@vue/eslint-config-airbnb": "^5.0.2",
     "@vue/eslint-config-typescript": "^5.0.2",
     "@vue/test-utils": "^2.0.0-0",
+    "cp-cli": "^2.0.0",
     "eslint": "^7.7.0",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-vue": "^7.0.0-0",
     "lint-staged": "^9.5.0",
+    "rimraf": "^3.0.2",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
     "typescript": "~4.2.3",
     "vue-jest": "^5.0.0-0",
-    "vue-loader": "^16.1.1",
-    "element-plus": "^1.0.2-beta.35"
+    "vue-loader": "^16.1.1"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
@@ -57,9 +58,9 @@
   "description": "A Component Library for Vue3.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/CrazyThink/every-ui.git"
+    "url": "https://github.com/Every-UI/Every-UI.git"
   },
-  "homepage": "https://github.com/CrazyThink/every-ui",
+  "homepage": "https://github.com/Every-UI/Every-UI",
   "license": "MIT",
   "main": "lib/every-ui.umd.js",
   "types": "lib/every-ui.d.ts",
