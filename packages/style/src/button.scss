@@ -1,0 +1,49 @@
+@import "common/var";
+
+.ev-button {
+  display: inline-block;
+  line-height: 1;
+  min-height: 40px;
+  white-space: nowrap;
+  cursor: pointer;
+  background: $--background-color-base;
+  border: 1px solid $--border-color-base;
+  color: #606266;
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  transition: .1s;
+  font-weight: 500;
+  padding: 12px 20px;
+  font-size: 14px;
+  border-radius: 4px;
+
+  &:focus,
+  &:hover {
+    color: $--color-primary;
+    border-color: $--color-primary-light-7;
+    background-color: $--color-primary-light-9;
+  }
+
+  &:active {
+    color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+    border-color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+    outline: none;
+  }
+
+  &.is-glass {
+    background: $--glass-color-base;
+    border: 1px solid $--glass-color-base;
+  }
+
+  &.is-round {
+    border-radius: 20px;
+    padding: 12px 23px;
+  }
+
+  &.is-circle {
+    border-radius: 50%;
+    padding: 12px;
+  }
+}

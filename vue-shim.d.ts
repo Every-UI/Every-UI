@@ -17,4 +17,4 @@ declare type Indexable<T> = {
 
 declare type Hash<T> = Indexable<T>
 
-declare type ComponentSize = 'large' | 'medium' | 'small' | 'mini'
+declare type ComponentSize = 'Default' | 'medium' | 'small' | 'mini'

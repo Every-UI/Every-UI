@@ -1,0 +1,31 @@
+$--color-white: #FFFFFF !default;
+$--color-black: #000000 !default;
+
+$--color-primary: #658be8 !default;
+
+$--color-primary-light-1: mix($--color-white, $--color-primary, 10%) !default;
+$--color-primary-light-2: mix($--color-white, $--color-primary, 20%) !default;
+$--color-primary-light-3: mix($--color-white, $--color-primary, 30%) !default;
+$--color-primary-light-4: mix($--color-white, $--color-primary, 40%) !default;
+$--color-primary-light-5: mix($--color-white, $--color-primary, 50%) !default;
+$--color-primary-light-6: mix($--color-white, $--color-primary, 60%) !default;
+$--color-primary-light-7: mix($--color-white, $--color-primary, 70%) !default;
+$--color-primary-light-8: mix($--color-white, $--color-primary, 80%) !default;
+$--color-primary-light-9: mix($--color-white, $--color-primary, 90%) !default;
+
+$--button-active-shade-percent: 10% !default;
+
+$--background-color-base: $--color-white !default;
+$--border-color-base: #DCDFE6 !default;
+
+$--glass-color-base: rgba($--color-white, .75) !default;
+
+$--glass-color-percent-10: rgba($--color-white, .1) !default;
+$--glass-color-percent-20: rgba($--color-white, .2) !default;
+$--glass-color-percent-30: rgba($--color-white, .3) !default;
+$--glass-color-percent-40: rgba($--color-white, .4) !default;
+$--glass-color-percent-50: rgba($--color-white, .5) !default;
+$--glass-color-percent-60: rgba($--color-white, .6) !default;
+$--glass-color-percent-70: rgba($--color-white, .7) !default;
+$--glass-color-percent-80: rgba($--color-white, .8) !default;
+$--glass-color-percent-90: rgba($--color-white, .9) !default;
