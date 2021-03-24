@@ -27,10 +27,10 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
-          GITHUB_TOKEN: ${{ secrets.WEB_TOKEN }}
-          BRANCH: pages
-          FOLDER: web
-          REPOSITORY_NAME: Every-UI/every-ui.github.io
-          GIT_CONFIG_NAME: EveryUIBot
-          GIT_CONFIG_EMAIL: everyui2021@gmail.com
-          COMMIT_MESSAGE: website deploy
+          token: ${{ secrets.WEB_TOKEN }}
+          branch: pages
+          folder: web
+          repository-name: Every-UI/every-ui.github.io
+          git-config-name: EveryUIBot
+          git-config-email: everyui2021@gmail.com
+          commit-message: website deploy
