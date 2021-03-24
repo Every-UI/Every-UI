@@ -19,6 +19,9 @@ jobs:
           node-version: '14'
 
       - name: Build Website
+        run: npm install
+        
+      - name: Build Website
         run: npm run website-prod:build
 
       - name: Deploy
