@@ -9,10 +9,11 @@
 
 <script lang="ts">
 
-import Sidebar from '@/layout/Sidebar.vue';
+import { defineComponent } from 'vue';
+import Sidebar from './sidebar.vue';
 
-export default {
+export default defineComponent({
   name: 'AppMain',
   components: { Sidebar }
-};
+});
 </script>

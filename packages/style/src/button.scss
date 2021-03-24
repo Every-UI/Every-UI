@@ -6,9 +6,9 @@
   min-height: 40px;
   white-space: nowrap;
   cursor: pointer;
-  background: $--background-color-base;
-  border: 1px solid $--border-color-base;
-  color: #606266;
+  color: $--color-white;
+  background: $--color-primary;
+  border: 1px solid $--color-primary;
   text-align: center;
   box-sizing: border-box;
   outline: none;
@@ -33,8 +33,23 @@
   }
 
   &.is-glass {
+    color: $--color-primary;
     background: $--glass-color-base;
     border: 1px solid $--glass-color-base;
+
+    &:focus,
+    &:hover {
+      color: $--color-white;
+      background: $--color-primary;
+      border: 1px solid $--color-primary;
+    }
+
+    &:active {
+      color: $--color-white;
+      background: $--color-primary-light-3;
+      border: 1px solid $--color-primary-light-3;
+      outline: none;
+    }
   }
 
   &.is-round {

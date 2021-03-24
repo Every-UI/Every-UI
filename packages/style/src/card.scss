@@ -1,0 +1,23 @@
+@import "common/var";
+
+.ev-card {
+  border-radius: 10px;
+  border: 1px solid $--border-color-base;
+  background-color: $--color-white;
+  color: $--color-text-primary;
+
+  &__header {
+    padding: 15px 20px;
+    font-size: 20px;
+  }
+
+  &__body {
+    padding: 20px;
+  }
+
+  &.is-glass {
+    color: $--color-text-primary;
+    background: $--glass-color-percent-50;
+    border: 1px solid $--glass-color-percent-50;
+  }
+}

@@ -1,29 +1,8 @@
-# every-ui
+# Every-UI
 
-## Project setup
-```
-npm install
-```
+A Component Library for Vue3.0
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+We hope use this on all platforms. PC, Mobile, etc.
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your unit tests
-```
-npm run test:unit
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Documentation
+Making...

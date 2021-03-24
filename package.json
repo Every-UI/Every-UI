@@ -4,7 +4,7 @@
   "private": false,
   "scripts": {
     "website-dev:run": "vue-cli-service serve --mode development-web",
-    "website-prod:build": "vue-cli-service serve",
+    "website-prod:build": "vue-cli-service build --mode production-web",
     "build": "vue-cli-service build",
     "build:lib": "vue-cli-service build --mode production-package --target lib --name every-ui packages/every-ui/index.ts",
     "build:type": "node build/gen-type.js",

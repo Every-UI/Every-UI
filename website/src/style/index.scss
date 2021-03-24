@@ -1,3 +1,24 @@
-html, body, #app {
+html {
   height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+}
+
+#app {
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.main-container {
+  height: 100%;
+  padding: 20px;
 }
