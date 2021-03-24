@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: '14'
 
-      - name: Build Website
+      - name: Npm Install
         run: npm install
         
       - name: Build Website
@@ -29,7 +29,7 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.WEB_TOKEN }}
           BRANCH: pages
-          FOLDER: website-dist
+          FOLDER: web
           GIT_CONFIG_NAME: EveryUIBot
           GIT_CONFIG_EMAIL: everyui2021@gmail.com
           COMMIT_MESSAGE: website deploy
