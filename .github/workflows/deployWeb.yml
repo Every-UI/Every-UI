@@ -19,7 +19,7 @@ jobs:
           node-version: '14'
 
       - name: Build Website
-        run: npm website-prod:build
+        run: npm run website-prod:build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.0
