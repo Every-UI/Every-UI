@@ -1,18 +1,5 @@
 <template>
-  <button
-    :class="[
-      'ev-button',
-      type ? 'ev-button__' + type : '',
-      buttonSize ? 'ev-button__' + buttonSize : '',
-      {
-        'is-disabled': buttonDisabled,
-        'is-round': round,
-        'is-circle': circle,
-        'is-glass': glass
-      }
-    ]"
-    @click="handleClick"
-  >
+  <button :class="classes" @click="handleClick">
     <em v-if="icon" :class="icon"/>
     <span v-if="$slots.default">
       <slot></slot>
@@ -39,7 +26,7 @@ export default defineComponent({
       ].includes(val)
     },
     size: {
-      type: String as PropType<ComponentSize>
+      type: String as PropType<'default'> // ComponentSize
     },
     icon: {
       type: String,
@@ -50,16 +37,34 @@ export default defineComponent({
     circle: Boolean,
     glass: Boolean
   },
+  emits: ['click'],
   setup(props, ctx) {
     const buttonSize = computed(() => props.size || Config.size);
-    const buttonDisabled = computed(() => props.disabled);
+    const classes = computed(() => {
+      const {
+        type, disabled, round, circle, glass
+      } = props;
+      return [
+        'ev-button',
+        type ? `ev-button__${type}` : '',
+        buttonSize.value ? `ev-button__${buttonSize.value}` : '',
+        {
+          'is-disabled': disabled,
+          'is-round': round,
+          'is-circle': circle,
+          'is-glass': glass
+        }
+      ];
+    });
+
     // methods
     const handleClick = (evt) => {
       ctx.emit('click', evt);
     };
+
     return {
       buttonSize,
-      buttonDisabled,
+      classes,
       handleClick
     };
   }

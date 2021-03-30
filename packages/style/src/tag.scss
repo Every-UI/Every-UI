@@ -1,0 +1,59 @@
+@import "common/var";
+
+.ev-tag {
+  display: inline-block;
+  height: 32px;
+  padding: 0 10px;
+  line-height: 30px;
+  font-size: 12px;
+  color: $--color-primary;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: $--border-radius-base;
+  box-sizing: border-box;
+  white-space: nowrap;
+  vertical-align: middle;
+
+  &__close {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+
+    &:before {
+      position: relative;
+      top: -8px;
+      left: -1px;
+    }
+
+    &:hover {
+      color: $--color-white;
+      background: $--color-primary;
+    }
+  }
+
+  &__input {
+    color: $--color-primary;
+    background: transparent;
+    border: 1px solid $--color-primary;
+    border-radius: 2px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &.is-glass {
+    color: $--color-primary;
+    background: $--glass-color-base;
+    border: 1px solid $--glass-color-base;
+  }
+
+  &.is-round {
+    border-radius: 20px;
+    padding: 0 15px;
+  }
+}

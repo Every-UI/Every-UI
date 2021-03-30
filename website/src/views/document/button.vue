@@ -9,6 +9,9 @@
     <ev-button glass>
       Glass
     </ev-button>
+    <ev-button round>
+      Round
+    </ev-button>
   </div>
 </template>
 

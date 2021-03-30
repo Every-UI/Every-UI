@@ -1,5 +1,5 @@
 <template>
-  <ev-container>
+  <ev-container class="app-main">
     <sidebar />
     <ev-main>
       <router-view/>
@@ -17,3 +17,11 @@ export default defineComponent({
   components: { Sidebar }
 });
 </script>
+
+<style lang="scss" scoped>
+.app-main {
+  @media (max-width: 1024px) {
+    flex-flow: column;
+  }
+}
+</style>

@@ -6,6 +6,7 @@ import EvContainer from '@every-ui/container/src/container.vue';
 import EvFooter from '@every-ui/footer/src/footer.vue';
 import EvHeader from '@every-ui/header/src/header.vue';
 import EvMain from '@every-ui/main/src/main.vue';
+import EvTag from '@every-ui/tag/src/tag.vue';
 
 const components = [
   EvAside,
@@ -14,7 +15,8 @@ const components = [
   EvContainer,
   EvFooter,
   EvHeader,
-  EvMain
+  EvMain,
+  EvTag
 ];
 
 const install = (app: App): void => {
@@ -31,6 +33,7 @@ export {
   EvFooter,
   EvHeader,
   EvMain,
+  EvTag,
   install
 };
 
