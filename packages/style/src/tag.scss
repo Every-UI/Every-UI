@@ -5,7 +5,7 @@
   height: 32px;
   padding: 0 10px;
   line-height: 30px;
-  font-size: 12px;
+  font-size: 14px;
   color: $--color-primary;
   border-width: 1px;
   border-style: solid;
@@ -40,6 +40,7 @@
     background: transparent;
     border: 1px solid $--color-primary;
     border-radius: 2px;
+    font-size: inherit;
 
     &:focus {
       outline: none;
@@ -55,5 +56,10 @@
   &.is-round {
     border-radius: 20px;
     padding: 0 15px;
+  }
+
+  .hidden-area {
+    position: fixed;
+    visibility: hidden;
   }
 }

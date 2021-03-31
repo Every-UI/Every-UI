@@ -18,7 +18,7 @@
     <ev-tag round closable>
       Round Closable
     </ev-tag>
-    <ev-tag v-model="editableTag" editable @input="handleInput"/>
+    <ev-tag v-model="editableTag" editable/>
   </div>
 </template>
 
@@ -32,14 +32,8 @@ export default defineComponent({
   setup() {
     const editableTag = ref('editableTag');
 
-    const handleInput = (value) => {
-      console.log(value);
-      console.log(1);
-    };
-
     return {
-      editableTag,
-      handleInput
+      editableTag
     };
   }
 });

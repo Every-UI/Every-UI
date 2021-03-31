@@ -1,6 +1,22 @@
 $--color-white: #FFFFFF !default;
 $--color-black: #000000 !default;
 
+$--color-gray-1: #111111 !default;
+$--color-gray-2: #222222 !default;
+$--color-gray-3: #333333 !default;
+$--color-gray-4: #444444 !default;
+$--color-gray-5: #555555 !default;
+$--color-gray-6: #666666 !default;
+$--color-gray-7: #777777 !default;
+$--color-gray-8: #888888 !default;
+$--color-gray-9: #999999 !default;
+$--color-gray-a: #aaaaaa !default;
+$--color-gray-b: #bbbbbb !default;
+$--color-gray-c: #cccccc !default;
+$--color-gray-d: #dddddd !default;
+$--color-gray-e: #eeeeee !default;
+
+
 $--color-text-primary: #111111 !default;
 $--color-primary: #658be8 !default;
 
@@ -20,7 +36,7 @@ $--background-color-base: $--color-white !default;
 $--border-color-base: #DCDFE6 !default;
 $--border-radius-base: 4px !default;
 
-$--glass-color-base: rgba($--color-white, .75) !default;
+$--glass-color-base: rgba($--color-white, .5) !default;
 
 $--glass-color-percent-10: rgba($--color-white, .1) !default;
 $--glass-color-percent-20: rgba($--color-white, .2) !default;

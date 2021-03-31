@@ -1,7 +1,6 @@
 <template>
   <span :class="classes" :style="{ backgroundColor: color }" @click="handleClick">
     <input v-if="editable && editMode"
-           v-model="nativeInputValue"
            ref="input"
            type="text"
            class="ev-tag__input"
@@ -9,19 +8,23 @@
            @focus="handleFocus"
            @blur="handleBlur"
            @change="handleChange"
-           @keydown.enter="changeEditMode(false)"
+           @keydown.enter.stop="handleEnter"
+           @submit.prevent
     />
     <span v-else-if="editable && !editMode">
       {{ nativeInputValue }}
     </span>
     <slot v-else-if="!editable"></slot>
+    <span v-if="editable && editMode" ref="inputValueString" class="hidden-area">
+      {{ nativeInputValue }}
+    </span>
     <em v-if="closable" class="ev-tag__close ev-icon-close" @click="handleClose"/>
   </span>
 </template>
 
 <script lang="ts">
 import {
-  defineComponent, computed, ref, nextTick
+  defineComponent, computed, ref, nextTick, watch
 } from 'vue';
 import type { PropType } from 'vue';
 import Config from '@every-ui/utils/config';
@@ -55,9 +58,10 @@ export default defineComponent({
     round: Boolean,
     glass: Boolean
   },
-  emits: [Constants.UPDATE_MODEL_EVENT, 'input', 'change', 'focus', 'blur', 'close', 'click'],
+  emits: [Constants.UPDATE_MODEL_EVENT, 'input', 'change', 'focus', 'blur', 'close', 'click', 'enter'],
   setup(props, ctx) {
     const input = ref(null);
+    const inputValueString = ref(null);
     const editMode = ref(false);
 
     const tagSize = computed(() => props.size || Config.size);
@@ -74,17 +78,25 @@ export default defineComponent({
         }
       ];
     });
-
     const nativeInputValue = computed(() => ((props.modelValue === null || props.modelValue === undefined) ? '' : String(props.modelValue)));
 
     // methods
+    const setInputWidth = () => {
+      input.value.style.width = `${inputValueString.value.clientWidth + 30}px`;
+    };
+    const setNativeInputValue = () => {
+      input.value.value = nativeInputValue.value;
+    };
     const focus = () => {
       nextTick(() => {
-        // FIXME
-        // input.value.focus();
+        if (!input.value) {
+          return;
+        }
+        input.value.focus();
+        setInputWidth();
+        setNativeInputValue();
       });
     };
-
     const changeEditMode = (mode: boolean) => {
       editMode.value = mode;
 
@@ -92,6 +104,10 @@ export default defineComponent({
         focus();
       }
     };
+
+    watch(nativeInputValue, () => {
+      setNativeInputValue();
+    });
 
     const handleClose = (event) => {
       event.stopPropagation();
@@ -108,8 +124,13 @@ export default defineComponent({
       if (value === nativeInputValue.value) {
         return;
       }
+
       ctx.emit(Constants.UPDATE_MODEL_EVENT, value);
       ctx.emit('input', value);
+      nextTick(() => {
+        setInputWidth();
+        setNativeInputValue();
+      });
     };
     const handleChange = (event) => {
       ctx.emit('change', event.target.value);
@@ -118,11 +139,20 @@ export default defineComponent({
       ctx.emit('focus', event);
     };
     const handleBlur = (event) => {
+      if (input.value) {
+        input.value.blur();
+      }
       changeEditMode(false);
       ctx.emit('blur', event);
     };
+    const handleEnter = (event) => {
+      changeEditMode(false);
+      ctx.emit('enter', event);
+    };
 
     return {
+      input,
+      inputValueString,
       tagSize,
       classes,
       nativeInputValue,
@@ -133,7 +163,8 @@ export default defineComponent({
       handleInput,
       handleChange,
       handleFocus,
-      handleBlur
+      handleBlur,
+      handleEnter
     };
   }
 });
