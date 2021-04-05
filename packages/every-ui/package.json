@@ -1,7 +1,7 @@
 {
   "name": "every-ui",
   "version": "0.0.1",
-  "homepage": "https://github.com/Every-UI/Every-UI",
+  "homepage": "https://every-ui.github.io",
   "license": "ISC",
   "main": "dist/index.js",
   "repository": {

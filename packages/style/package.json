@@ -16,7 +16,7 @@
     "url": "git+https://github.com/Every-UI/Every-UI.git"
   },
   "license": "MIT",
-  "homepage": "https://github.com/Every-UI/Every-UI",
+  "homepage": "https://every-ui.github.io",
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",

@@ -1,5 +1,5 @@
 import { createApp } from 'vue';
-import EveryUI from 'every-ui/lib/every-ui.umd';
+import EveryUI from 'every-ui';
 import router from '@/router';
 import store from '@/store';
 import App from './app.vue';
