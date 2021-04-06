@@ -4,8 +4,8 @@
       Content
     </div>
     <ev-input v-model="value" class="input"/>
-    <ev-input v-model="value" round class="input"/>
-    <ev-input v-model="value" round clearable class="input"/>
+    <ev-input v-model="value" round class="input" disabled/>
+    <ev-input v-model="value" round clearable readonly class="input"/>
     <ev-input v-model="value" glass round clearable class="input">
       <template #suffix>
         <em class="ev-icon-plus"/>

@@ -70,7 +70,7 @@ export default defineComponent({
       return [
         'ev-tag',
         type ? `ev-tag__${type}` : '',
-        tagSize.value ? `el-tag__${tagSize.value}` : '',
+        tagSize.value ? `ev-tag__${tagSize.value}` : '',
         {
           'is-round': round,
           'is-glass': glass,
@@ -153,7 +153,6 @@ export default defineComponent({
     return {
       input,
       inputValueString,
-      tagSize,
       classes,
       nativeInputValue,
       editMode,

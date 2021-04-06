@@ -70,4 +70,10 @@
     border-radius: 20px;
     padding: 0 15px;
   }
+
+  &.is-disabled {
+    .ev-input__inner {
+      color: $--color-gray-a;
+    }
+  }
 }

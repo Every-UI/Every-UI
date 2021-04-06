@@ -11,8 +11,14 @@
            @change="handleChange"
            @keydown="handleKeydown"
     />
-    <span v-if="clearable || $slots.suffix" ref="option" class="ev-input__option">
-      <em v-if="clearable" class="ev-input__close ev-icon-close" @click="handleClear"/>
+    <span v-if="(!readonly && !disabled && clearable) || $slots.suffix"
+          ref="option"
+          class="ev-input__option"
+    >
+      <em v-if="!readonly && !disabled && clearable"
+          class="ev-input__close ev-icon-close"
+          @click="handleClear"
+      />
       <slot name="suffix"></slot>
     </span>
   </div>
@@ -53,18 +59,17 @@ export default defineComponent({
     const option = ref(null);
 
     const inputSize = computed(() => props.size || Config.size);
-    const classes = computed(() => {
-      const { type, round, glass } = props;
-      return [
-        'ev-input',
-        type ? `ev-input__${type}` : '',
-        inputSize.value ? `el-input__${inputSize.value}` : '',
-        {
-          'is-round': round,
-          'is-glass': glass
-        }
-      ];
-    });
+    const classes = computed(() => [
+      'ev-input',
+      props.type ? `ev-input__${props.type}` : '',
+      inputSize.value ? `ev-input__${inputSize.value}` : '',
+      {
+        'is-round': props.round,
+        'is-glass': props.glass,
+        'is-disabled': props.disabled,
+        'is-readonly': props.readonly
+      }
+    ]);
     const nativeInputValue = computed(() => ((props.modelValue === null || props.modelValue === undefined) ? '' : String(props.modelValue)));
 
     // methods
@@ -129,7 +134,6 @@ export default defineComponent({
     return {
       input,
       option,
-      tagSize: inputSize,
       classes,
       nativeInputValue,
       handleClear,
